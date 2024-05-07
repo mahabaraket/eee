@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* Styles for modal */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Maha baraket portfolio</title>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="profile container">
+        <!-- Theme button -->
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+        <div class="profile__container grid">
+            <div class="profile__data">
+                <div class="profile__border">
+                    <div class="profile__perfil">
+                        <!-- Insert your image, according to the example size of the portfolio -->
+                        <img src="assets/img/me.jpg" width="100" height="100" alt="My photo">
+                    </div>
+                </div>
+
+                <h2 class="profile__name">Maha baraket</h2>
+                <h3 class="profile__profession">Web developer</h3>
+
+                <ul class="profile__social">
+                    <a href="https://www.instagram.com/maha.baraket/" target="_blank" class="profile__social-link">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mahabaraket" target="_blank" class="profile__social-link">
+                        <i class="ri-linkedin-box-line"></i>
+                    </a>
+                    <a href="https://github.com/mahabaraket" target="_blank" class="profile__social-link">
+                        <i class="ri-github-line"></i>
+                    </a>
+                </ul>
+            </div>
+
+
+
+            <div class="profile__buttons">
+                <!-- Insert your CV -->
+                <a download="" href="assets/pdf/CV_maha_Baraket_en.pdf" class="button">
+                        Download CV <i class="ri-download-line"></i>
+                    </a>
+
+                <div class="profile__buttons-small">
+                    <!-- Insert a real number plus country code -->
+                    <a href="https://api.whatsapp.com/send?phone=93878451&text=Hello, more information!" target="_blank" class="button button__small button__gray">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <!-- Insert your brand name or profile -->
+                    <a href="https://m.me/maha.baraket" target="_blank" class="button button__small button__gray">
+                        <i class="ri-messenger-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+        <section class="filters container">
+            <!--=============== FILTERS TABS ===============-->
+            <ul class="filters__content">
+
+                <button class="filters__button filter-tab-active" data-target="#projects">
+                        Projects
+                    </button>
+                <button class="filters__button" data-target="#skills">
+                        Skills
+                    </button>
+                <button class="filters__button " data-target="#Studies">
+                        Studies
+                    </button>
+                <button class="filters__button" data-target="#Experience">
+                        Experience
+                    </button>
+            </ul>
+
+            <div class="filters__sections">
+                <!--=============== PROJECTS ===============-->
+                <div class="projects__content grid filters__active fade" data-content id="projects">
+
+                    <article class="projects__card">
+                        <img src="assets/img/Project3.jpg" alt="" class="projects__img">
+
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Web</span>
+                                <h3 class="projects__title">Project management</h3>
+                                <!-- <a href="#" class="projects__button button button__small">
+                                    <i class="ri-link"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <img src="assets/img/Project2.jpg" alt="" class="projects__img">
+
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Web</span>
+                                <h3 class="projects__title">Social Application</h3>
+                                <!-- <a href="#" class="projects__button button button__small">
+                                    <i class="ri-link"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </article>
+                    <article class="projects__card" onclick="previewImage('assets/img/project1.jpg')">
+                        <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
+                        <img src="assets/img/Project1.jpg" alt="" class="projects__img">
+
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Mobile</span>
+                                <h3 class="projects__title">Hair salon management</h3>
+
+                            </div>
+                        </div>
+                    </article>
+
+
+
+
+
+                    <article class="projects__card">
+                        <img src="assets/img/Project4.jpg" alt="" class="projects__img">
+
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Mobile</span>
+                                <h3 class="projects__title">Grocery App</h3>
+
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+
+                </div>
+
+
+                <!--=============== SKILLS ===============-->
+                <div class="skills__content grid fade" data-content id="skills">
+                    <div class="skills__area">
+                        <h3 class="skills__title">Frontend Developer</h3>
+
+                        <div class="skills__box">
+
+
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Angular(HTML/CSS/Bootstrap/Material/typeScript)</h3>
+                                        <span class="skills__level">Advance</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Ionic</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Flutter</h3>
+                                        <span class="skills__level">Beginner</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__area">
+                        <h3 class="skills__title">Backend Developer</h3>
+
+                        <div class="skills__box">
+                            <div class="skills__group">
+
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">MySQL</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">MongoDB</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Node Js(JavaScript/ExpressJS..)</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">SpringBoot </h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="skills__area">
+                        <h3 class="skills__title">Other</h3>
+
+                        <div class="skills__box">
+                            <div class="skills__group">
+
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">GitHUB</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">AWS</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Docker</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Jenkins </h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--===============Studies==============-->
+                <div class="studies__content grid fade " data-content id="Studies">
+                    <div class="skills__area">
+                        <div class="skills__box">
+                            <div class="skills__group">
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-fill"></i>
+                                    <h3 class="skills__title">IT ENGINEERING | TEK-UP Private College of Engineering & Technology , Tunisia
+                                    </h3>
+                                    <div class="skills__level">2020-2023</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills__area">
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-fill"></i>
+                                    <h3 class="skills__title">BACHELOR IN COMPUTER SCIENCE | Higher Institute of Informatics and Mathematics of Monastir , Tunisia
+                                    </h3>
+                                    <div class="skills__level">2016-2020</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--==================Experience===============-->
+                <div class="Experience__content grid fade" data-content id="Experience">
+                    <div class="skills__area">
+                        <div class="skill__box">
+                            <div class="skills__group">
+                                <div class="skills__data" style="margin-bottom: 30px;">
+                                    <i class="ri-focus-fill"></i>
+                                    <h3 class="skills__tilte"> END-OF-STUDIES | MEAN STACK DEVELOPER</h3>
+                                    <div class="skills__level">(5 months)<br/> <i class="ri-task-line"></i> Developed API functions (NodeJS, MongoDB, ExpressJS..).
+                                        <br/>
+                                        <i class="ri-task-line"></i>Guaranteed a reactive interface in real time.<br/>
+                                        <i class="ri-task-line"></i>Integrated the Web services into the application.<br/>
+                                        <i class="ri-task-line"></i>Handled HTTP requests to the APIs.<br/>
+
+                                        <i class="ri-task-line"></i>Participated in Agile ceremonies: Sprint, planning, retro, demo.Participated in the various phases of the project: specification analysis, design and development.<br/>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="skill__box">
+                            <div class="skills__group">
+                                <div class="skills__data" style="margin-bottom: 30px;">
+                                    <i class="ri-focus-fill"></i>
+                                    <h3 class="skills__tilte"> SUMMER INTERSHIP | Front-end UI</h3>
+                                    <div class="skills__level">(4 months)<br/> <i class="ri-task-line"></i> Develop UI mockups and prototypes that clearly illustrate how the app functions and what it looks like.
+                                        <br/>
+                                        <i class="ri-task-line"></i>Create clean, intuitive UI/UX with accebility standars and multi-device support. Implement a new data discovery and correction interface that allow user ti understand the data distribution
+                                        and correct any mislabeled data.<br/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="skill__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-focus-fill"></i>
+                                    <h3 class="skills__tilte"> END-OF-STUDIES | MEAN STACK DEVELOPER</h3>
+                                    <div class="skills__level">(4 months)<br/> <i class="ri-task-line"></i> Develop UI mockups and prototypes that clearly illustrate how the app functions and what it looks like.
+                                        <br/>
+                                        <i class="ri-task-line"></i>Create clean, intuitive UI/UX with accebility standars and multi-device support. Implement a new data discovery and correction interface that allow user ti understand the data distribution
+                                        and correct any mislabeled data.<br/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+        <span class="footer__copy">
+                &#169; Maha baraket
+            </span>
+    </footer>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Preview" class="modal-content">
+</div>
+<script>
+    // Open the modal with the selected image
+    function previewImage(imageSrc) {
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("modalImage");
+        modalImage.src = imageSrc;
+        modal.style.display = "block";
+    }
+
+    // Close the modal
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+</script>
+
+</html>
